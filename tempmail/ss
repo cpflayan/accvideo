@@ -1,0 +1,7 @@
+#!/bin/bash
+
+USERNAME=1234
+EMAIL=$USERNAME@p33.org
+
+echo -e "from tempmail import TempMail\ntm = TempMail()\nemail = $EMAIL\nprint tm.get_mailbox(email)"
+

@@ -1,0 +1,15 @@
+HTTP/1.1 302 Found
+Date: Sat, 18 Nov 2017 20:08:20 GMT
+Set-Cookie: JSESSIONID=CF2E1C8D4399FBC63633FF941DEF644A.lobby2; Path=/; Secure
+Location: https://lobby-videoslots.betsoftgaming.com/error_pages/sessionerror.jsp
+Content-Type: text/html;charset=UTF-8
+Content-Length: 0
+Vary: Accept-Encoding
+
+HTTP/1.1 200 OK
+Date: Sat, 18 Nov 2017 20:08:21 GMT
+Set-Cookie: JSESSIONID=6EE21BE53796F4E90C74D93C5288CDE6.lobby1; Path=/; Secure
+Content-Type: text/html;charset=UTF-8
+Content-Length: 1607
+Vary: Accept-Encoding
+

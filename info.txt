@@ -1,0 +1,24 @@
+firstname=JooGeok
+lastname=Bird
+sex=Male
+birth=1981-03-14
+address=64 Talisman Avenue city=Gaspe zipcode=16201
+------------------------------------------------------------------------------------------------------
+firstname=Focus
+lastname=Dickson
+sex=Male
+birth=1981-01-12
+address=56 East 53rd Avenue city=Kingston zipcode=1549
+------------------------------------------------------------------------------------------------------
+firstname=Detlef
+lastname=Mcknight
+sex=Female
+birth=1988-01-16
+address=155 Walnut Street city=Ashcroft zipcode=29459
+------------------------------------------------------------------------------------------------------
+firstname=Shiroshi
+lastname=Finley
+sex=Female
+birth=1988-05-25
+address=92 Qualicum Drive city=Jesmond zipcode=28820
+------------------------------------------------------------------------------------------------------

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+PWD=`pwd`
+FIRSTNAME=`cat $PWD/names.txt | sort -R | head -1`
+LASTNAME=`cat $PWD/top_1000_usa_familynames_english.txt | sort -R | head -1`
+ROAD=`cat $PWD/streets | sort -R | head -1`
+CITY=`cat $PWD/cities | sort -R | head -1`
+YEAR=`shuf -i 1972-1992 -n 1`
+MONTH=`shuf -i 1-9 -n 1`
+DATE=`shuf -i 10-28 -n 1`
+ADDRESS="`shuf -i 1-199 -n 1` $ROAD"
+ZIPCODE=$RANDOM
+SEX=`cat $PWD/sex | sort -R | head -1`
+
+echo $UA > $PWD/ua
+
+echo firstname=$FIRSTNAME'&'lastname=$LASTNAME'&'address=$ADDRESS'&'zipcode=$ZIPCODE'&'city=$CITY'&'newsletter=1'&'over18=1'&'bonus_code='&'sex=$SEX'&'preferred_lang=en'&'dob=$YEAR-0$MONTH-$DATE'&'birthyear=$YEAR'&'birthmonth=0$MONTH'&'birthdate=$DATE'&'email_code=$EMAILCODES'&'currency=GBP > $PWD/step2
+
+
+
+
+curl -i -s -k  -X $'POST' \
+    -H "@$PWD/ua" -H $'Referer: https://www.videoslots.com/en/registration2/' -H $'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H $'X-Requested-With: XMLHttpRequest' \
+    -b /tmp/cookie \
+    --data-binary "@$PWD/step2" \
+ \
+    $'https://www.videoslots.com/phive/modules/Micro/registration_new.php?lang=en' -c /tmp/cookie
+
+
+
+echo firstname=$FIRSTNAME >> /root/Casino-singup/info.txt
+echo lastname=$LASTNAME >>/root/Casino-singup/info.txt
+echo sex=$SEX >> /root/Casino-singup/info.txt
+echo birth=$YEAR-0$MONTH-$DATE >> /root/Casino-singup/info.txt
+echo address=$ADDRESS city=$CITY zipcode=$ZIPCODE >> /root/Casino-singup/info.txt
+echo ------------------------------------------------------------------------------------------------------ >> /root/Casino-singup/info.txt
+
