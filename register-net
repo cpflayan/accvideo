@@ -17,11 +17,11 @@ DATE=`shuf -i 10-28 -n 1`
 ADDRESS=`faker -l $FAKER street_address`
 ZIPCODE=`faker -l $FAKER postcode`
 SEX=`cat $PWD/sex | sort -R | head -1`
-NOW=`date +%Y-%m-%d`
+
 DOMAIN=`cat $PWD/tempmail/fmgdomain.txt | sort -R | head -1`
 
 EMAIL=$USERNAME@$DOMAIN
-
+NOW=`date +%Y-%m-%d`
 
 
 # http  "http://www.fakemailgenerator.com/#/$DOMAIN/$USERNAME/"
@@ -116,6 +116,41 @@ echo sex = $SEX >> $PWD/accounts/info.txt
 echo birth = $YEAR-0$MONTH-$DATE >> $PWD/accounts/info.txt
 echo address = $ADDRESS city = $CITY zipcode = $ZIPCODE >> $PWD/accounts/info.txt
 echo ------------------------------------------------------------------------------------------------------ >> $PWD/accounts/info.txt
+
+gnome-terminal -- firefox --new-window 'https://videoslots.com'
+
+sleep 20
+
+
+WID=`xdotool search --name Mozilla`
+xdotool windowfocus $WID
+xdotool mousemove 781 240 click 1
+xdotool type $USERNAME
+xdotool key Tab
+xdotool type $USERNAME
+xdotool mousemove 1064 287 click 1
+sleep 3
+xdotool mousemove 77 149 click 1 
+sleep 70
+xdotool mousemove 633 607 click  1
+sleep 20
+xdotool mousemove 607 589 click  1
+sleep 2
+xdotool mousemove 551 653 click  1
+sleep 2
+xdotool mousemove 243 688 click  1
+sleep 2	
+xdotool mousemove 249 606 click  1
+sleep 2
+xdotool mousemove 547 652 click  1
+sleep 2
+xdotool mousemove 332 636 click  1
+
+sleep 80
+
+xdotool mousemove 809 184 click 1
+sleep 3
+xdotool key Alt+F4
 
 
 

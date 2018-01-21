@@ -117,6 +117,26 @@ echo birth = $YEAR-0$MONTH-$DATE >> $PWD/accounts/info.txt
 echo address = $ADDRESS city = $CITY zipcode = $ZIPCODE >> $PWD/accounts/info.txt
 echo ------------------------------------------------------------------------------------------------------ >> $PWD/accounts/info.txt
 
+gnome-terminal -- firefox --new-window 'https://videoslots.com'
+
+sleep 20
+
+
+WID=`xdotool search --name Mozilla`
+xdotool windowfocus $WID
+xdotool mousemove 781 240 click 1
+xdotool type $USERNAME
+xdotool key Tab
+xdotool type $USERNAME
+xdotool mousemove 1064 287 click 1
+sleep 3
+xdotool mousemove 61 148 click 1 
+sleep 15
+xdotool mousemove 573 612 click --repeat 25 --delay 5000 1
+xdotool mousemove 809 184 click 1
+sleep 3
+xdotool key Alt+F4
+
 
 
 
