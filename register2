@@ -1,22 +1,23 @@
 #!/bin/bash
 export PYTHONIOENCODING=UTF-8
+SEX=`cat $PWD/sex | sort -R | head -1`
 COUNTRY=$1
 FAKER=`cat $PWD/countrycode/$COUNTRY`
 PWD=`pwd`
-FIRSTNAME=`faker -l $FAKER first_name`
+FIRSTNAME=`faker -l $FAKER first_name_$SEX`
 USERNAME=$RANDOM$FIRSTNAME
 
 MOBILE=`faker -l $FAKER msisdn`
 UA=`cat $PWD/user-agent.txt | sort -R | head -1`$RANDOM
 
-LASTNAME=`faker -l $FAKER last_name`
+LASTNAME=`faker -l $FAKER last_name_$SEX`
 CITY=`faker -l $FAKER city`
 YEAR=`shuf -i 1972-1992 -n 1`
 MONTH=`shuf -i 1-9 -n 1`
 DATE=`shuf -i 10-28 -n 1`
 ADDRESS=`faker -l $FAKER street_address`
 ZIPCODE=`faker -l $FAKER postcode`
-SEX=`cat $PWD/sex | sort -R | head -1`
+
 NOW=`date +%Y-%m-%d`
 EMAIL=$USERNAME@guerrillamailblock.com
 
@@ -86,7 +87,7 @@ echo sex = $SEX
 echo birth = $YEAR-0$MONTH-$DATE 
 echo address = $ADDRESS city = $CITY zipcode = $ZIPCODE
 echo -----------------------------------------------------------
-echo $USERNAME >> $PWD/accounts/$COUNTRY-accounts.txt
+echo $USERNAME >> $PWD/accounts/$COUNTRY-$NOW.txt
 
 echo ------------------------------------------------------------------------------------------------------ >> $PWD/accounts/info.txt
 echo username = $USERNAME >> $PWD/accounts/info.txt
