@@ -4,8 +4,7 @@ COUNTRY=$1
 FAKER=`cat $PWD/countrycode/$COUNTRY`
 PWD=`pwd`
 FIRSTNAME=`faker -l $FAKER first_name`
-USERNAME=$RANDOM$FIRSTNAME
-
+USERNAME=`cat /dev/urandom | tr -dc "a-z" | fold -w 1 | head -1``cat /dev/urandom | tr -dc "A-Z" | fold -w 1 | head -1`$RANDOM$RANDOM
 MOBILE=`faker -l $FAKER msisdn`
 UA=`cat $PWD/user-agent.txt | sort -R | head -1`$RANDOM
 
@@ -104,6 +103,7 @@ echo birth = $YEAR-0$MONTH-$DATE
 echo address = $ADDRESS city = $CITY zipcode = $ZIPCODE
 echo -----------------------------------------------------------
 echo $USERNAME >> $PWD/accounts/$COUNTRY-$NOW.txt
+echo $USERNAME >> ~/Desktop/aclist.txt
 
 echo ------------------------------------------------------------------------------------------------------ >> $PWD/accounts/info.txt
 echo username = $USERNAME >> $PWD/accounts/info.txt
@@ -131,19 +131,19 @@ xdotool type $USERNAME
 xdotool mousemove 1064 287 click 1
 sleep 3
 xdotool mousemove 77 149 click 1 
-sleep 70
+sleep 63
 xdotool mousemove 633 607 click  1
-sleep 20
+sleep 15
 xdotool mousemove 607 589 click  1
-sleep 2
+sleep 1
 xdotool mousemove 551 653 click  1
-sleep 2
+sleep 1
 xdotool mousemove 243 688 click  1
-sleep 2	
+sleep 1	
 xdotool mousemove 249 606 click  1
-sleep 2
+sleep 1
 xdotool mousemove 547 652 click  1
-sleep 2
+sleep 1
 xdotool mousemove 332 636 click  1
 
 sleep 80

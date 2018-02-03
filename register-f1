@@ -5,11 +5,8 @@ COUNTRY=$1
 FAKER=`cat $PWD/countrycode/$COUNTRY`
 PWD=`pwd`
 FIRSTNAME=`faker -l $FAKER first_name_$SEX`
-USERNAME=$RANDOM$FIRSTNAME
-
 MOBILE=`faker -l $FAKER msisdn`
 UA=`cat $PWD/user-agent.txt | sort -R | head -1`$RANDOM
-
 LASTNAME=`faker -l $FAKER last_name_$SEX`
 CITY=`faker -l $FAKER city`
 YEAR=`shuf -i 1972-1992 -n 1`
@@ -17,10 +14,10 @@ MONTH=`shuf -i 1-9 -n 1`
 DATE=`shuf -i 10-28 -n 1`
 ADDRESS=`faker -l $FAKER street_address`
 ZIPCODE=`faker -l $FAKER postcode`
-
 NOW=`date +%Y-%m-%d`
 DOMAIN=`cat $PWD/tempmail/fmgdomain.txt | sort -R | head -1`
-
+USERHEAD=`tr -dc "[:alpha:]" < /dev/urandom | head -c 4`
+USERNAME=`cat /dev/urandom | tr -dc "a-z" | fold -w 1 | head -1``cat /dev/urandom | tr -dc "A-Z" | fold -w 1 | head -1`$RANDOM$RANDOM
 EMAIL=$USERNAME@$DOMAIN
 
 

@@ -13,11 +13,11 @@ YEAR=`shuf -i 1972-1992 -n 1`
 MONTH=`shuf -i 1-9 -n 1`
 DATE=`shuf -i 10-28 -n 1`
 ADDRESS=`faker -l $FAKER street_address`
-ZIPCODE=`faker -l $FAKER postcode`
+ZIPCODE="`cat /dev/urandom | tr -dc "A-Z" | fold -w 1 | head -1``shuf -i 0-9 -n 1``cat /dev/urandom | tr -dc "A-Z" | fold -w 1 | head -1` `shuf -i 0-9 -n 1``cat /dev/urandom | tr -dc "A-Z" | fold -w 1 | head -1``shuf -i 0-9 -n 1`"
 NOW=`date +%Y-%m-%d`
 DOMAIN=`cat $PWD/tempmail/fmgdomain.txt | sort -R | head -1`
 USERHEAD=`tr -dc "[:alpha:]" < /dev/urandom | head -c 4`
-USERNAME=$FIRSTNAME`shuf -i 10-100 -n 1`$USERHEAD
+USERNAME=`cat /dev/urandom | tr -dc "a-z" | fold -w 1 | head -1``cat /dev/urandom | tr -dc "A-Z" | fold -w 1 | head -1`$RANDOM`tr -dc "[:alpha:]" < /dev/urandom | head -c 4`
 EMAIL=$USERNAME@guerrillamailblock.com
 
 guerrillamail setaddr $USERNAME
@@ -99,4 +99,25 @@ echo sex = $SEX >> $PWD/accounts/info.txt
 echo birth = $YEAR-0$MONTH-$DATE >> $PWD/accounts/info.txt
 echo address = $ADDRESS city = $CITY zipcode = $ZIPCODE >> $PWD/accounts/info.txt
 echo ------------------------------------------------------------------------------------------------------ >> $PWD/accounts/info.txt
+
+
+gnome-terminal -- firefox --new-window 'https://videoslots.com'
+
+sleep 20
+
+
+WID=`xdotool search --name Mozilla`
+xdotool windowfocus $WID
+xdotool mousemove 781 240 click 1
+xdotool type $USERNAME
+xdotool key Tab
+xdotool type $USERNAME
+xdotool mousemove 1064 287 click 1
+sleep 3
+xdotool mousemove 61 148 click 1
+sleep 15
+xdotool mousemove 573 612 click --repeat 25 --delay 5000 1
+xdotool mousemove 809 184 click 1
+sleep 3
+xdotool key Alt+F4
 
