@@ -24,11 +24,11 @@ EMAIL=$USERNAME@$DOMAIN
 
 # http  "http://www.fakemailgenerator.com/#/$DOMAIN/$USERNAME/"
 
-gnome-terminal -- google-chrome --new-window "http://www.fakemailgenerator.com/#/$DOMAIN/$USERNAME/"
+gnome-terminal -- firefox --new-window --new-window "http://www.fakemailgenerator.com/#/$DOMAIN/$USERNAME/"
 
 sleep 10
 
-wmctrl -ic "$(wmctrl -l | grep 'Google Chrome' | tail -1 | awk '{ print $1 }')"
+wmctrl -ic "$(wmctrl -l | grep 'Mozilla' | tail -1 | awk '{ print $1 }')"
 
 echo $UA > $PWD/ua
 
