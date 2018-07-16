@@ -6,7 +6,7 @@ UA=`faker user_agent`
 YEAR=`shuf -i 1972-1992 -n 1`
 MONTH=`shuf -i 1-9 -n 1`
 DATE=`shuf -i 10-28 -n 1`
-DOMAIN=`cat $PWD/yandomain.txt | shuf | head -1`
+DOMAIN=`cat $PWD/yandomain.txt | sort -R | head -1`
 USERNAME=`faker first_name``cat /dev/urandom | tr -dc "a-z" | fold -w 1 | head -1``cat /dev/urandom | tr -dc "a-z" | fold -w 1 | head -1`
 EMAIL=$USERNAME@$DOMAIN
 LTNAME=`faker last_name`
@@ -19,6 +19,6 @@ LTNAME=`faker last_name`
 #TOKEN=`sed -n '47p' bet`
 
 
-curl -H 'PddToken: 4DZWPZBDRXDZUYFPS2RNW3NSTZSWEKPMVKN3EFKL6T3CEN34NJMQ' -d "domain=$DOMAIN&login=$USERNAME&password=h123085858&iname=$USERNAME&fname=$LTNAME&enabled=yes&birth_date=$YEAR-$MONTH-$DATE&sex=1&hintq=pet's nmame ???&hinta=$USERNAME" 'https://pddimp.yandex.ru/api2/admin/email/add'
+curl -H 'PddToken: RULNFWZZCWNSCYXRQHUNXGC5KA4KQMBKNBM45T4NPZIT7XRXOOLA' -d "domain=$DOMAIN&login=$USERNAME&password=h123085858&iname=$USERNAME&fname=$LTNAME&enabled=yes&birth_date=$YEAR-$MONTH-$DATE&sex=1&hintq=pet's nmame ???&hinta=$USERNAME" 'https://pddimp.yandex.ru/api2/admin/email/add'
 
 echo $EMAIL
