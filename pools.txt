@@ -1,0 +1,6 @@
+  "pool_list" :
+[
+	{"pool_address" : "mine.ryo.fairpool.xyz:5555", "wallet_address" : "RYoLshnzwDx3sdnLmwFzEDbKy2LwkommqXdWARfyoTN3GZKiq5DqCYmAvGD825j3WyJLghJfy7cF9B57urkzCWSd4HP3xACBS9q", "rig_id" : "lab", "pool_password" : "x" "lab:", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
+],
+
+"currency" : "cryptonight_heavy",
